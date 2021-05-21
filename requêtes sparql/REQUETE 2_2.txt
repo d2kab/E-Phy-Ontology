@@ -1,0 +1,26 @@
+#REQUÊTE 2.2 : Obtenir la définition de tous les familles chimiques que compose un produit
+
+
+REFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ephy: <http://www.d2kab.org/ontologies/ephy#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX chebi: <http://purl.obolibrary.org/obo/>
+
+SELECT ?fc ?fcL ?fcD ?fcSyn
+WHERE {
+ ?p   skos:notation "9900386"^^xsd:integer;
+	  rdf:type/rdfs:subClassOf ephy:Intrant;
+  	  ephy:compositionIntegrale ?c.
+ ?c ephy:substance ?s.
+ ?s ephy:familleChimique ?fc.
+ SERVICE <sparql end point de CHEBI> {
+	?fc skos:definition ?fcD;
+		skos:prefLabel ?fcL.
+	OPTIONAL {
+	    ?fc skos:altLabel ?fcSyn.
+	}
+ }
+  
+}

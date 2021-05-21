@@ -1,0 +1,14 @@
+#REQUÊTE 4 :  Obtenir les produits efficace contre un groupe d'organisme nuisible
+#Cet exemple permet de trouver tous les produits qui ont un effet sur les nuisibles de type  “Acariens et phytoptes” 
+
+PREFIX ephy: <http://www.d2kab.org/ontologies/ephy#>
+
+SELECT distinct ?p
+WHERE {
+  {
+  	?p ephy:usage ?u.
+ 	?u ephy:identifiantUsage ?iu.
+ 	?iu ephy:groupeOrganismeNuisible ?gon.
+  	filter(?gon = "Acariens et phytoptes")
+  }
+}

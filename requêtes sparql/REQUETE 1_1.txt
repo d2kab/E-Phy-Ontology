@@ -1,0 +1,34 @@
+
+#REQUÊTE 1.1 :  Exploitation de la structure de l’ontologie pour obtenir tous les produits utilisable pour un  culture 
+#Cet exemple permet de retrouver tous les produits utilisables pour la culture “Ananas” et produit par “BAYER SAS”
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ephy: <http://www.d2kab.org/ontologies/ephy#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT distinct ?pL  ?typepL ?pEtat
+WHERE {
+       ?p a ?typep;
+              rdfs:label ?pL;
+              ephy:titulaire ?pTitilaire;
+  	 ephy:etat ?pEtat.
+       ?typep rdfs:label ?typepL.
+      
+     {
+  	?p ephy:usage ?u.
+ 	?u ephy:identifiantUsage ?iu.
+ 	?iu ephy:porteeUsage ?c.
+ 	?c rdfs:label ?cl.
+      
+     }
+     UNION
+     {
+             ?p ephy:culturePreconise ?cp.
+ 	?cp ephy:typeCulture ?c.
+ 	?c rdfs:label ?cl.   
+     }  
+         filter(?cl = "Ananas" && ?pTitilaire = "BAYER SAS")
+}

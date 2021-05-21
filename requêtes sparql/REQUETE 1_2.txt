@@ -1,0 +1,49 @@
+#REQUÊTE 1.2 :  Exploitation de l’heritage et des synonyms pour obtenir tous les produits utilisable pour toute une famille de  culture 
+#Cet exemple permet de retrouver tous les produits utilisables pour la famille de culture des "Arboriculture_fruitiere"  à partir de son synonyme  “verger". 
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX cropusage: <http://ontology.irstea.fr/cropusage/>
+PREFIX ephy: <http://www.d2kab.org/ontologies/ephy#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT distinct  ?pl ?ptypel ?fcuL ?fcud ?fcuInfo
+WHERE {
+  SERVICE <http://ontology.irstea.fr/cropusage/sparql> {
+	  ?fcuP a skos:Concept.
+               {
+    		?fucP skos:altLabel ?fcuPsyn.
+                          filter(?fcuPsyn = "verger"@fr)
+                 }
+                 UNION
+                 {
+      		?fucP skos:prefLabel ?fcuPL.
+      		filter(?fcuPL = "verger"@fr)
+                }
+      
+    	  
+                ?fcu skos:broader* ?fcuP ;
+      	           skos:definition ?fcud;
+                        skos:prefLabel ?fcuL;
+    	           rdfs:seeAlso ?fcuInfo
+   }
+  
+  {	
+	?p rdfs:label ?pl.
+    ?p a ?ptype.
+    ?ptype rdfs:label ?ptypel.
+
+    {
+		?iu ephy:porteeUsage ?fcu.	
+        ?u ephy:identifiantUsage ?iu.
+        ?p ephy:usage ?u.
+              
+    }
+    UNION
+    {
+      	?cp ephy:typeCulture ?fcu.
+        ?p ephy:culturePreconise ?cp.
+    }  
+ }
+}

@@ -1,0 +1,7 @@
+ "p" , "c_p" ,
+ "http://www.d2kab.org/ontologies/ephy#variant" , "1702" ,
+ "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" , "1477" ,
+ "http://www.d2kab.org/ontologies/ephy#familleChimique" , "546" ,
+ "http://www.w3.org/2000/01/rdf-schema#label" , "1274" ,
+ "http://www.d2kab.org/ontologies/ephy#numeroCas" , "621" ,
+ "http://www.d2kab.org/ontologies/ephy#etat" , "1274" ,

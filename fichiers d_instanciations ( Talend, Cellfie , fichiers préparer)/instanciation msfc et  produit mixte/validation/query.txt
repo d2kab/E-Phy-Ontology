@@ -1,0 +1,6 @@
+SELECT ?p1 ?c_p1 ?p2 ?c_p2
+WHERE {
+{select ?p1 (count(?p1) as ?c_p1) where {?s1 ephy:ecartAdmissibleElementCompositon ?v1 . ?v1 ?p1 ?v11 . filter(?v11!=owl:NamedIndividual)} GROUP BY ?p1}
+  UNION 
+  {select ?p2 (count(?p2) as ?c_p2) where {?s1 ephy:ecartAdmissibleRevendicationComplementaire ?v1 . ?v1 ?p2 ?v22 . filter(?v22!=owl:NamedIndividual)} GROUP BY ?p2}
+}

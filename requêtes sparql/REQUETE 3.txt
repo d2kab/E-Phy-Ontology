@@ -1,0 +1,16 @@
+#REQUÊTE 3.2:  Obtenir la vue ITAB des produits utilisable en agriculture biologique 
+#Cet requête qui permet exemple permet de retrouver tous les produits utilisable en agriculture biologique et ainsi obtenir la ressource ITAB
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ephy: <http://www.d2kab.org/ontologies/ephy#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?x ?pp ?v
+WHERE {
+   ?p  rdf:type/rdfs:subClassOf ephy:Intrant;
+       ephy:mentionAutoriser ?ma;
+       (!rdf:null)* ?x.
+   ?x ?pp ?v
+   filter(?ma = "Utilisable en agriculture biologique")
+}

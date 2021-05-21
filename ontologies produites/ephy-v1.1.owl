@@ -1,0 +1,1842 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.d2kab.org/ontologies/ephy#"
+     xml:base="http://www.d2kab.org/ontologies/ephy"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:mod="http://www.isibang.ac.in/ns/mod#"
+     xmlns:omv="http://omv.ontoware.org/2005/05/ontology#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:doap="http://usefulinc.com/ns/doap/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:idot="http://identifiers.org/idot/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/"
+     xmlns:cropusage="http://ontology.irstea.fr/cropusage/">
+    <owl:Ontology rdf:about="http://www.d2kab.org/ontologies/ephy">
+        <owl:versionIRI rdf:resource="http://www.d2kab.org/ontologies/ephy/2021/v1"/>
+        <cc:useGuidelines rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L&apos;ontologie E-Phy a été développée avec l&apos;aval de l&apos;ANSES et servira peut être à modifier la base de données E-Phy à l&apos;avenir. L&apos;ontologie E-Phy peut être utilisée de manière libre, sans modification (CC BY-ND) et ce pour éviter la prolifération de version alternatives sans contrôle de l&apos;ANSES. Tous les retours sont appréciés.@fr</cc:useGuidelines>
+        <idot:exampleIdentifier rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <omv:acronym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-Phy</omv:acronym>
+        <omv:hasFormalityLevel rdf:resource="omv:Ontology"/>
+        <omv:hasOntologyLanguage rdf:resource="omv:OWL"/>
+        <omv:hasOntologySyntax rdf:resource="http://www.w3.org/ns/formats/RDF_XML"/>
+        <omv:keyClasses rdf:resource="http://www.d2kab.org/ontologies/ephy#ADJUVANT"/>
+        <omv:keyClasses rdf:resource="http://www.d2kab.org/ontologies/ephy#MELANGE"/>
+        <omv:keyClasses rdf:resource="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+        <omv:keyClasses rdf:resource="http://www.d2kab.org/ontologies/ephy#PPP"/>
+        <omv:keyClasses rdf:resource="http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE"/>
+        <omv:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intrant, produit phytopharmaceutique, matière fertilisante et support de culture, adjuvant, produit mixte, usage, substance, cultures</omv:keywords>
+        <omv:status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alpha</omv:status>
+        <omv:usedOntologyEngineeringMethodology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modélisation UML à partir du schéma XML des données d&apos;origines; Puis formalisation en OWL avec Protégé; Puis instanciations avec Talend et Celphie.@fr</omv:usedOntologyEngineeringMethodology>
+        <omv:usedOntologyEngineeringTool rdf:resource="https://protege.stanford.edu"/>
+        <dct:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-Phy contient à un instant « t », les autorisations de produits phytopharmaceutiques (PPP), adjuvants, matières fertilisantes et supports de culture (MFSC), produits mixtes et mélanges ayant une autorisation de mise sur le marché. Elle renseigne également sur les substances actives composant les PPP. Ces objets se retrouvent dans la classe Intrant de l&apos;ontologie E-Phy</dct:abstract>
+        <dct:accessRights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L&apos;ontologie E-Phy est disponible sous Licence CC BY-ND 4.0. Cependant les données d&apos;origines restent la propriété de l&apos;ANSES.</dct:accessRights>
+        <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-12-01</dct:created>
+        <dct:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Syphax Bouazzouni(https://orcid.org/0000-0002-2069-8739) ,Clement Jonquet(https://orcid.org/0000-0002-2404-1582)</dct:creator>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> E-Phy est une base de connaissances (ontologie+instances) tirée de la base de données E-Phy de l&apos;ANSES (https://ephy.anses.fr) qui contient le catalogue des produits phytopharmaceutiques et de leurs usages, des matières fertilisantes et des supports de culture autorisés en France. Cette base de connaissances a été crée dans le cadre du projet ANR D2KAB par le LIRMM et l&apos;INRAE. Elle a vocation à proposer une version RDF de la base de données E-Phy.</dct:description>
+        <dct:hasFormat rdf:resource="https://www.data.gouv.fr/en/datasets/r/cdbc887b-265e-4338-9509-5e9958df1a48"/>
+        <dct:hasFormat rdf:resource="https://www.data.gouv.fr/en/datasets/r/98f7cac6-6b29-4859-8739-51b825196959"/>
+        <dct:hasPart rdf:resource="http://www.d2kab.org/ontologies/itab"/>
+        <dct:isFormatOf rdf:resource="https://ephy.anses.fr"/>
+        <dct:language rdf:resource="http://lexvo.org/id/iso639-3/fra"/>
+        <dct:license>https://creativecommons.org/licenses/by-nd/4.0/</dct:license>
+        <dct:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MISTEA (INRAE) et LIRMM (University de Montpellier)</dct:publisher>
+        <dct:rightsHolder rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MISTEA (INRAE) et LIRMM (University de Montpellier)</dct:rightsHolder>
+        <dct:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Données de E-Phy (https://www.data.gouv.fr/en/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/), version de novembre 2019</dct:source>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontologie des produits phytopharmaceutiques et de leurs usages, des matières fertilisantes et des supports de culture autorisés en France</dct:title>
+        <dct:valid rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-01-29</dct:valid>
+        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ephy</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="http://www.d2kab.org/ontologies/ephy"/>
+        <voaf:hasEquivalencesWith rdf:resource="http://ontology.irstea.fr/cropusage/"/>
+        <voaf:hasEquivalencesWith rdf:resource="http://purl.obolibrary.org/obo/chebi.owl"/>
+        <void:rootResource rdf:resource="owl:Thing"/>
+        <void:uriRegexPattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">versionIRI#Name|GeneratedId</void:uriRegexPattern>
+        <doap:bugDatabase rdf:resource="https://github.com/d2kab/E-Phy-Ontology/issues"/>
+        <doap:repository rdf:resource="https://github.com/d2kab/E-Phy-Ontology"/>
+        <mod:browsingUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://agroportal.lirmm.fr/ontologies/E-PHY/</mod:browsingUI>
+        <mod:definitionProperty rdf:resource="skos:definition"/>
+        <mod:hierarchyProperty rdf:resource="rdfs:subClassOf"/>
+        <mod:obsoleteParent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">none</mod:obsoleteParent>
+        <mod:obsoleteProperty rdf:resource="owl:deprecated"/>
+        <mod:prefLabelProperty rdf:resource="rdfs:label"/>
+        <mod:synonymProperty rdf:resource="skos:altLabel"/>
+        <mod:vocabularyUsed rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <mod:vocabularyUsed rdf:resource="http://www.w3.org/2002/07/owl"/>
+        <mod:vocabularyUsed rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:deprecated>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <prov:wasGeneratedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Syphax Bouazzouni</prov:wasGeneratedBy>
+        <sd:endpoint rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://sparql.agroportal.lirmm.fr/test</sd:endpoint>
+        <foaf:fundedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ANR D2KAB (www.d2kab.org), DigitAg (www.hdigitag.fr)</foaf:fundedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#useGuidelines -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#useGuidelines"/>
+    
+
+
+    <!-- http://identifiers.org/idot/exampleIdentifier -->
+
+    <owl:AnnotationProperty rdf:about="http://identifiers.org/idot/exampleIdentifier"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#acronym -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#hasOntologyLanguage -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasOntologyLanguage"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#hasOntologySyntax -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasOntologySyntax"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#keyClasses -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#keyClasses"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#keywords -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#keywords"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#status -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#status"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#usedOntologyEngineeringMethodology -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#usedOntologyEngineeringMethodology"/>
+    
+
+
+    <!-- http://omv.ontoware.org/2005/05/ontology#usedOntologyEngineeringTool -->
+
+    <owl:AnnotationProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#usedOntologyEngineeringTool"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/accessRights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/accessRights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasFormat"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasPart"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/isFormatOf -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/isFormatOf"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rightsHolder -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rightsHolder"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/valid -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/valid"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://purl.org/vocommons/voaf#hasEquivalencesWith -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocommons/voaf#hasEquivalencesWith"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#rootResource -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#rootResource"/>
+    
+
+
+    <!-- http://rdfs.org/ns/void#uriRegexPattern -->
+
+    <owl:AnnotationProperty rdf:about="http://rdfs.org/ns/void#uriRegexPattern"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap/bugDatabase -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap/bugDatabase"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap/repository -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap/repository"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#browsingUI -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#browsingUI"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#definitionProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#definitionProperty"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#hierarchyProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#hierarchyProperty"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#obsoleteParent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#obsoleteParent"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#obsoleteProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#obsoleteProperty"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#prefLabelProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#prefLabelProperty"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#synonymProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#synonymProperty"/>
+    
+
+
+    <!-- http://www.isibang.ac.in/ns/mod#vocabularyUsed -->
+
+    <owl:AnnotationProperty rdf:about="http://www.isibang.ac.in/ns/mod#vocabularyUsed"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sparql-service-description#endpoint -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sparql-service-description#endpoint"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/fundedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/fundedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ConditionEmploiCategorie -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#ConditionEmploiCategorie">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Autres mesures de protection</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Conditions d&apos;emploi du matériel utilisé</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Délai de rentrée</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Environnement faune</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Environnement flore</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>Environnement milieu</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>Etiquetage</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>Protection de l&apos;opérateur</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>Protection du travailleur</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>Respect LMR</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first>Riverains</rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first>Résistances</rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                        <rdf:first>Stockage</rdf:first>
+                                                                                                                        <rdf:rest>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                <rdf:first>Utilisation</rdf:first>
+                                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Etat -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#Etat">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">Autorisé</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">Provisoire</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="fr">Retrait</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#EtatProduit -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#EtatProduit">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">AUTORISE</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">RETIRE</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#EtatSubstance -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#EtatSubstance">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">AUTRE_CAS</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">INSCRIPTION_EN_COURS</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="fr">INSCRITE</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first xml:lang="fr">NON_INSCRITE</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#GammeUsage -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#GammeUsage">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">Amateur / emploi autorisé dans les jardins</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">Professionnel</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#MentionAutorise -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#MentionAutorise">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Emploi autorisé dans les jardins</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Liste biocontrôle</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Mention abeille</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Produit à faible risque article 47</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Utilisable en agriculture biologique</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#TypeCommercial -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#TypeCommercial">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">Deuxième gamme</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">Générique</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="fr">Produit de revente</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first xml:lang="fr">Produit de référence</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#TypeCulture -->
+
+    <rdfs:Datatype rdf:about="http://www.d2kab.org/ontologies/ephy#TypeCulture">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="fr">Arboriculture fruitière et vigne</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="fr">Arbres et arbustes d&apos;ornement</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="fr">Arbres et arbustes d&apos;ornement, conifères et feuillus de forêt</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first xml:lang="fr">Autres</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first xml:lang="fr">Cultures florales</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first xml:lang="fr">Cultures légumières</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first xml:lang="fr">Cultures maraîchères</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first xml:lang="fr">Cultures ornementales</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first xml:lang="fr">Cultures tropicales</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first xml:lang="fr">Gazon de graminées</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first xml:lang="fr">Gazons de graminées, jardins d&apos;amateurs</rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first xml:lang="fr">Grandes cultures</rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                        <rdf:first xml:lang="fr">Horticulture</rdf:first>
+                                                                                                                        <rdf:rest>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                <rdf:first xml:lang="fr">Légumes racine</rdf:first>
+                                                                                                                                <rdf:rest>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                        <rdf:first xml:lang="fr">Plantes aromatiques, médicinales et à parfum</rdf:first>
+                                                                                                                                        <rdf:rest>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                <rdf:first xml:lang="fr">Plantes d&apos;intérieur</rdf:first>
+                                                                                                                                                <rdf:rest>
+                                                                                                                                                    <rdf:Description>
+                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                        <rdf:first xml:lang="fr">Pépinière</rdf:first>
+                                                                                                                                                        <rdf:rest>
+                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                <rdf:first xml:lang="fr">Traitement des semences</rdf:first>
+                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                        <rdf:first xml:lang="fr">Traitements généraux</rdf:first>
+                                                                                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                </rdf:rest>
+                                                                                                                                                            </rdf:Description>
+                                                                                                                                                        </rdf:rest>
+                                                                                                                                                    </rdf:Description>
+                                                                                                                                                </rdf:rest>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:rest>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:rest>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#classeDanger -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#classeDanger">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#ClasseDanger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#compositionIntegrale -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#compositionIntegrale">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#SubstanceActive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#conditionEmploiProduit -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#conditionEmploiProduit">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#ConditionEmploiProduit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#culturePreconise -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#culturePreconise">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#doseParApportMax -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#doseParApportMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#doseParApportMin -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#doseParApportMin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#doseRetenue -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#doseRetenue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ecartAdmissibleElementCompositon -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#ecartAdmissibleElementCompositon">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#EcartAdmissible"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ecartAdmissibleRevendicationComplementaire -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#ecartAdmissibleRevendicationComplementaire">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#EcartAdmissible"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#familleChimique -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#familleChimique">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#identifiantUsage -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#identifiantUsage">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#UsageCatalogue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#melangeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#melangeDe">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#MELANGE"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#PPP"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#phraseRisque -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#phraseRisque">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#PhraseRisque"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#porteeUsage -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#porteeUsage">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#UsageCatalogue"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Culture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#produitImporter -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#produitImporter">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#ProduitImporte"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#produitReference -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#produitReference">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#restriction -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#restriction">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Restriction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#saisonApplicationMax -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#saisonApplicationMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#SaisonApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#saisonApplicationMin -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#saisonApplicationMin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#SaisonApplication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#substance -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#substance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#SubstanceActive"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#teneurSaPure -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#teneurSaPure">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#SubstanceActive"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#typeCulture -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#typeCulture">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Culture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#usage -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#usage">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#ADJUVANT"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#MELANGE"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#PPP"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#valeurRetenueMax -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#valeurRetenueMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#EcartAdmissible"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#valeurRetenueMin -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#valeurRetenueMin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#EcartAdmissible"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#zntAquatique -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#zntAquatique">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#zntArthropodesNonCibles -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#zntArthropodesNonCibles">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#zntPlantesNonCibles -->
+
+    <owl:ObjectProperty rdf:about="http://www.d2kab.org/ontologies/ephy#zntPlantesNonCibles">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#composantSimple -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#composantSimple">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#EcartAdmissible"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#conditionEmploi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#conditionEmploi">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#conditionEmploiCategorie -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#conditionEmploiCategorie">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#ConditionEmploiProduit"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#ConditionEmploiCategorie"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#dateDecision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#dateDecision">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#dateFinDistribution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#dateFinDistribution">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#dateFinUtilisation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#dateFinUtilisation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#datePremiereAutorisation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#datePremiereAutorisation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#dateReraitProduit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#dateReraitProduit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#delaiAvantRecolteBbch -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#delaiAvantRecolteBbch">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#delaiAvantRecolteJour -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#delaiAvantRecolteJour">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#doseValeur -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#doseValeur">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#etat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#etat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#Etat"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#EtatProduit"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#EtatSubstance"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#fonction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#fonction">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#gammeUsage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#gammeUsage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#GammeUsage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#groupeOrganismeNuisible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#groupeOrganismeNuisible">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#intervalleMinApplication -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#intervalleMinApplication">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#mentionAutoriser -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#mentionAutoriser">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#MentionAutorise"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#methodeApplication -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#methodeApplication">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#nombreApplicationMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#nombreApplicationMax">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#nombreApportMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#nombreApportMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#nombreApportMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#nombreApportMin">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#numeroCas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#numeroCas">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#paysOrigine -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#paysOrigine">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#ProduitImporte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#secondNomCommercial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#secondNomCommercial">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#stadeCulturalMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#stadeCulturalMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#stadeCulturalMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#stadeCulturalMin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#titulaire -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#titulaire">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#typeCommercial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#typeCommercial">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.d2kab.org/ontologies/ephy#TypeCommercial"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#typeFormulation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#typeFormulation">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#unite -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#unite">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#variant -->
+
+    <owl:DatatypeProperty rdf:about="http://www.d2kab.org/ontologies/ephy#variant">
+        <rdfs:domain rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:label xml:lang="fr">chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ADJUVANT -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#ADJUVANT">
+        <rdfs:subClassOf rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#produitReference"/>
+                <owl:allValuesFrom rdf:resource="http://www.d2kab.org/ontologies/ephy#ADJUVANT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#usage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Adjuvant</rdfs:label>
+        <skos:definition xml:lang="fr">sont des substances qui renforcent l&apos;action des produits phytosanitaires en augmentant le pouvoir d&apos;absorption du produit par la plante ou un insecte ou par le bois, etc</skos:definition>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_16381"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/199"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60809"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ClasseDanger -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#ClasseDanger">
+        <rdfs:label xml:lang="fr">Classe de danger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ConditionEmploiProduit -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#ConditionEmploiProduit">
+        <rdfs:label xml:lang="fr">Condition d’emploi d’un produit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Culture -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Culture">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Culture</rdfs:label>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/xDef_55be8bc6"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/7140-def"/>
+        <skos:exactMatch rdf:resource="http://opendata.inra.fr/anaeeThes/c3_2598"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/AGRO_00000325"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#CulturePreconise -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#CulturePreconise">
+        <rdfs:label xml:lang="fr">Culture préconisé</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Dose -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Dose">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#doseValeur"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#unite"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Dose</rdfs:label>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_36906"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/OBI_0000969"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/2308"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#EcartAdmissible -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#EcartAdmissible">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#valeurRetenueMax"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#valeurRetenueMin"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Ecart admissible</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Intrant -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Intrant">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#etat"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.d2kab.org/ontologies/ephy#EtatProduit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Intrant</rdfs:label>
+        <skos:definition xml:lang="fr">En agriculture, on appelle « intrants » les différents produits apportés aux terres et aux cultures</skos:definition>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_2798"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/5407"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#MELANGE -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#MELANGE">
+        <rdfs:subClassOf rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#produitReference"/>
+                <owl:allValuesFrom rdf:resource="http://www.d2kab.org/ontologies/ephy#MELANGE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#usage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#melangeDe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#PPP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Mélange</rdfs:label>
+        <skos:definition xml:lang="fr">Un mélange de produits phytopharmaceutiques se compose de plusieurs produits phytopharmaceutiques rendus solubles et bénéficiant chacun d’une autorisation de mise sur le marché à titre individuel. La préparation du mélange doit se faire juste avant son utilisation : on parle de mélange extemporané</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#MFSC -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#MFSC">
+        <rdfs:subClassOf rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#produitReference"/>
+                <owl:allValuesFrom rdf:resource="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#culturePreconise"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Matières fertilisantes et supports de culture</rdfs:label>
+        <skos:definition xml:lang="fr">Les matières fertilisantes sont des produits destinés à assurer ou à améliorer la nutrition des végétaux, ainsi que les propriétés des sols. Les supports de culture sont destinés à servir de milieu de culture à certains végétaux</skos:definition>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_2867"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/5568"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33287"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#PPP -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#PPP">
+        <rdfs:subClassOf rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#produitReference"/>
+                <owl:allValuesFrom rdf:resource="http://www.d2kab.org/ontologies/ephy#PPP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#usage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Produit phytopharmaceutique</rdfs:label>
+        <skos:definition xml:lang="fr">sont des préparations destinées à protéger les végétaux et les produits de culture</skos:definition>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_5739"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/287"/>
+        <skos:exactMatch rdf:resource="http://opendata.inra.fr/anaeeThes/c2_2798"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25944"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE">
+        <rdfs:subClassOf rdf:resource="http://www.d2kab.org/ontologies/ephy#Intrant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#produitReference"/>
+                <owl:allValuesFrom rdf:resource="http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#culturePreconise"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#CulturePreconise"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#usage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Usage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Produits Mixtes</rdfs:label>
+        <skos:definition xml:lang="fr">est composé soit d’une matière fertilisante ou d’un support de culture et d’un produit phytopharmaceutique, soit de nature à avoir un double effet de produit phytopharmaceutique et de matière fertilisante ou de support de culture.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#PhraseRisque -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#PhraseRisque">
+        <rdfs:label xml:lang="fr">Phrase de risque</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#ProduitImporte -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#ProduitImporte">
+        <rdfs:label xml:lang="fr">Produit importé</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Restriction -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Restriction">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Restriction</rdfs:label>
+        <skos:closeMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_e445bc84"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#SaisonApplication -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#SaisonApplication">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saison d&apos;application</rdfs:label>
+        <skos:closeMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_6911"/>
+        <skos:closeMatch rdf:resource="http://lod.nal.usda.gov/nalt/14062"/>
+        <skos:closeMatch rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000096"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Substance -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Substance">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#etat"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.d2kab.org/ontologies/ephy#EtatSubstance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Substance</rdfs:label>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_49872"/>
+        <skos:exactMatch rdf:resource="http://lod.nal.usda.gov/nalt/183"/>
+        <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/CHEBI_59999"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#SubstanceActive -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#SubstanceActive">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#substance"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Substance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#teneurSaPure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.d2kab.org/ontologies/ephy#Dose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Substance active</rdfs:label>
+        <skos:definition xml:lang="fr">les substances ou micro-organismes, y compris les virus exerçant une action générale ou spécifique : sur les organismes nuisibles ou sur les végétaux, parties de végétaux ou produits végétaux.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#Usage -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#Usage">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#etat"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.d2kab.org/ontologies/ephy#Etat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Usage</rdfs:label>
+        <skos:exactMatch rdf:resource="http://aims.fao.org/aos/agrovoc/c_8117"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy#UsageCatalogue -->
+
+    <owl:Class rdf:about="http://www.d2kab.org/ontologies/ephy#UsageCatalogue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.d2kab.org/ontologies/ephy#methodeApplication"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catalogue national des usages</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- owl:Ontology -->
+
+    <owl:Class rdf:about="owl:Ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.d2kab.org/ontologies/ephy -->
+
+    <owl:NamedIndividual rdf:about="http://www.d2kab.org/ontologies/ephy">
+        <rdf:type rdf:resource="owl:Ontology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.d2kab.org/ontologies/ephy#ADJUVANT"/>
+            <rdf:Description rdf:about="http://www.d2kab.org/ontologies/ephy#MELANGE"/>
+            <rdf:Description rdf:about="http://www.d2kab.org/ontologies/ephy#MFSC"/>
+            <rdf:Description rdf:about="http://www.d2kab.org/ontologies/ephy#PPP"/>
+            <rdf:Description rdf:about="http://www.d2kab.org/ontologies/ephy#PRODUIT-MIXTE"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
