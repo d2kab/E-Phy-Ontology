@@ -5,7 +5,7 @@ Le catalogue E-Phy contient l'ensemble des données des produits (produits phyto
 
 La ressource ITAB est un autre ‘catalogue’ sous le nom de [Guide des produits de protection des cultures utilisables en Agriculture Biologique](www.itab.asso.fr/downloads/com-intrants/guide-protection-plantes6.pdf) en France produit par L’Institut Technique de l’Agriculture Biologique (ITAB) qui maintient, de manière distincte de l’ANSES, une liste des produits de protection des cultures, utilisables dans le cadre de la production biologique. Cependant, tous les produits du guide ITAB (version de septembre 2014 en ligne) sont inclus dans la base de données E-Phy dénotés avec la propriété “mentions-autorisées=utilisable en agriculture biologique”.
 ## Lien des ontologies produites
-* [**ontologie E-PHY sans instances**](https://github.com/d2kab/E-Phy-Ontology/blob/main/ontologies%20produites/ephy-v1.owl)
+* [**ontologie E-PHY sans instances**](https://github.com/d2kab/E-Phy-Ontology/blob/main/ontologies%20produites/ephy-v1.1.owl)
 * [**ontologie E-PHY avec instances**](http://agroportal.lirmm.fr/ontologies/E-PHY)
 * [**ontologie ITAB avec instances**](http://agroportal.lirmm.fr/ontologies/ITAB)
 
